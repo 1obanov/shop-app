@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRef, useContext, useEffect, useState } from "react";
+import { useNavigate, Navigate } from "react-router-dom";
 import { ShopContext } from "../context/context";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -72,6 +72,7 @@ function Checkout() {
   } = state;
   const [deliveryPrice, setDeliveryPrice] = useState(0);
   const navigate = useNavigate();
+  const hasJustOrderedRef = useRef(false);
 
   // Calculate subtotal price from cart items
   const subTotalPrice = Number(
@@ -129,13 +130,6 @@ function Checkout() {
     };
   }, [dispatch]);
 
-  // Redirect to home if cart is empty
-  useEffect(() => {
-    if (!loadingCart && cart.length === 0) {
-      navigate("/");
-    }
-  }, [cart, loadingCart, navigate]);
-
   const handleNextStep = () => {
     dispatch({ type: "SET_CURRENT_STEP", payload: currentStep + 1 });
   };
@@ -191,6 +185,7 @@ function Checkout() {
       sessionStorage.removeItem("orderSuccessViewed");
 
       dispatch({ type: "CLEAR_CART" });
+      hasJustOrderedRef.current = true;
       navigate("/order-success");
     } catch (error) {
       console.error("Error placing order:", error);
@@ -245,6 +240,8 @@ function Checkout() {
 
   if (isAuthenticated === null || (isAuthenticated && loadingUserDetails)) {
     return <Preloader />;
+  } else if (!loadingCart && cart.length === 0 && !hasJustOrderedRef.current) {
+    return <Navigate to="/" replace />;
   }
 
   return (
