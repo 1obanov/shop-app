@@ -1,4 +1,5 @@
-import { BrowserRouter as HashRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ContextProvider } from "./context/context";
 import { ToastContainer } from "react-toastify";
 
@@ -26,7 +27,7 @@ import { UserAddresses } from "./components/user/UserAddresses";
 function App() {
   return (
     <ContextProvider>
-      <HashRouter>
+      <Router>
         <div className="wrapper">
           <Header />
           <main>
@@ -53,7 +54,7 @@ function App() {
           <Footer />
         </div>
         <ToastContainer />
-      </HashRouter>
+      </Router>
     </ContextProvider>
   );
 }
