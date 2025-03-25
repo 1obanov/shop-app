@@ -1,4 +1,3 @@
-// import { BrowserRouter as HashRouter, Routes, Route } from "react-router-dom";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ContextProvider } from "./context/context";
 import { ToastContainer } from "react-toastify";
