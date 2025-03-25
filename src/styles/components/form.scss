@@ -1,0 +1,217 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  &-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    &--half {
+      grid-template-columns: repeat(2, 1fr);
+
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &-group {
+    display: flex;
+    flex-direction: column;
+
+    &__wrap {
+      position: relative;
+
+      label {
+        font-size: 16px;
+        font-weight: 500;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gray-600);
+        transition: transform 0.3s, font-size 0.3s;
+      }
+
+      input {
+        padding: 18px 12px;
+        border: 1px solid var(--gray-400);
+        border-radius: 4px;
+        width: 100%;
+        outline: none;
+        transition: border-color 0.3s;
+
+        @media (hover: hover) {
+          &:hover {
+            border-color: var(--gray-500);
+          }
+        }
+
+        &:not(.date-picker-input):focus {
+          padding: 24px 12px 12px;
+          border: 1px solid var(--black);
+        }
+
+        &:disabled {
+          @media (hover: hover) {
+            &:hover {
+              border-color: var(--gray-400);
+            }
+          }
+        }
+      }
+
+      input:not(.date-picker-input):not(:placeholder-shown) {
+        padding: 24px 12px 12px;
+      }
+
+      input:not(.date-picker-input):focus ~ .label,
+      input:not(.date-picker-input):not(:placeholder-shown) ~ .label,
+      input:not(.date-picker-input):-webkit-autofill ~ .label {
+        font-size: 12px;
+        transform: translateY(calc(-50% - 12px));
+      }
+
+      input:not(.date-picker-input):-webkit-autofill {
+        padding: 24px 12px 12px;
+        background-clip: text;
+        -webkit-box-shadow: 0 0 0px 1000px var(--white) inset; /* Избегаем изменения цвета autofill */
+      }
+
+      .password-toggle {
+        display: flex;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+
+      .react-datepicker-wrapper {
+        width: 100%;
+      }
+
+      &--icon {
+        input {
+          &:focus {
+            padding: 24px 44px 12px 12px;
+          }
+        }
+
+        input:not(:placeholder-shown) {
+          padding: 24px 44px 12px 12px;
+        }
+      }
+    }
+
+    &--radio {
+      .label {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid var(--gray-400);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: border-color 0.3s;
+
+        @media (hover: hover) {
+          &:hover {
+            border-color: var(--gray-500);
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &__title {
+          font-size: 16px;
+
+          span {
+            em {
+              font-size: 14px;
+              color: var(--gray-600);
+            }
+          }
+
+          [type="radio"]:checked,
+          [type="radio"]:not(:checked) {
+            position: absolute;
+            left: -9999px;
+          }
+
+          [type="radio"]:checked + span,
+          [type="radio"]:not(:checked) + span {
+            position: relative;
+            padding-left: 28px;
+            cursor: pointer;
+            line-height: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            color: var(--black);
+          }
+
+          [type="radio"]:checked + span:before,
+          [type="radio"]:not(:checked) + span:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 18px;
+            height: 18px;
+            border: 1px solid var(--gray-500);
+            border-radius: 100%;
+            background-color: var(--white);
+          }
+
+          [type="radio"]:checked + span:after,
+          [type="radio"]:not(:checked) + span:after {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background-color: var(--black);
+            position: absolute;
+            top: 5px;
+            left: 3px;
+            border-radius: 100%;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+          }
+
+          [type="radio"]:not(:checked) + span:after {
+            opacity: 0;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+          }
+
+          [type="radio"]:checked + span:after {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+          }
+
+          [type="radio"]:checked + span:before {
+            border: 1px solid var(--black);
+          }
+        }
+      }
+
+      input {
+        width: max-content;
+      }
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin: 5px 0 0;
+}

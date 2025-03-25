@@ -1,0 +1,131 @@
+.card {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: box-shadow 0.3s;
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+      .btn {
+        top: calc(100% - 34px - 20px);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    @include image-container;
+
+    .discount {
+      background-color: var(--primary);
+      color: var(--white);
+      font-size: 11px;
+      padding: 3px 6px;
+      font-weight: 700;
+      border-radius: 3px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      text-transform: capitalize;
+    }
+
+    .remove-from-wishlist,
+    .add-to-wishlist {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 36px;
+      height: 36px;
+      padding: 8px;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .no-image {
+      @include no-image;
+    }
+
+    .btn {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+
+      @media (max-width: 767px) {
+        top: calc(100% - 34px - 20px);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__body {
+    padding: 16px;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 0;
+
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &__full {
+        text-align: center;
+        font-weight: 700;
+        font-size: 16px;
+
+        &--crossed {
+          text-decoration: line-through;
+          font-weight: 400;
+          color: var(--gray-600);
+          font-size: 14px;
+        }
+      }
+
+      &__discounted {
+        text-align: center;
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+
+    .title {
+      position: relative;
+      color: var(--black);
+      font-size: 15px;
+      margin: 0;
+      font-weight: 500;
+      display: inline-block;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+      text-align: center;
+      text-decoration: none;
+      transition: opacity 0.3s ease-out;
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}

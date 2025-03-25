@@ -1,0 +1,12 @@
+.checkout {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    margin-bottom: 100px;
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

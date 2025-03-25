@@ -1,0 +1,28 @@
+.order-success {
+  padding: 100px 0;
+
+  @media (max-width: 1023px) {
+    padding: 50px 0;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: auto 576px;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .headline {
+      padding: 0;
+    }
+  }
+}

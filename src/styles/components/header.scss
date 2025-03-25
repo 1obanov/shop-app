@@ -1,0 +1,80 @@
+.header {
+  background-color: var(--white);
+  border-bottom: 2px solid var(--gray-100);
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: box-shadow 0.3s;
+  z-index: 1;
+
+  &.scrolled {
+    box-shadow: 0 8px 16px rgba(126, 126, 126, 0.15);
+    border-bottom: none;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-shrink: 0;
+    gap: 5px;
+    font-size: 30px;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+    line-height: 1;
+    font-family: "Ubuntu Sans Mono", monospace;
+  }
+
+  &-actions {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .badge {
+      color: var(--black);
+      max-width: max-content;
+      cursor: pointer;
+      display: flex;
+      position: relative;
+
+      &.pulse {
+        animation: pulse 0.5s linear;
+      }
+
+      span {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--black);
+        color: var(--white);
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        border-radius: 50%;
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &--checkout {
+    .container {
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+    }
+  }
+}

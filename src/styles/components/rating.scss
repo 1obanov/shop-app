@@ -1,0 +1,35 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: 667px) {
+    flex-direction: column;
+  }
+
+  .stars {
+    display: flex;
+    align-items: center;
+
+    &__ico {
+      display: flex;
+      position: relative;
+
+      .star-half--rotate {
+        position: absolute;
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  .divider {
+    display: flex;
+    color: var(--gray-600);
+  }
+
+  .reviews {
+    text-align: center;
+    font-size: 14px;
+    color: var(--gray-600);
+  }
+}

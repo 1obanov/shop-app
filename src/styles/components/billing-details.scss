@@ -1,0 +1,26 @@
+.billing-details {
+  h2 {
+    margin: 0 0 20px;
+  }
+
+  &__info {
+    dl {
+      margin: 0;
+
+      dt {
+        float: left;
+        clear: left;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 5px 0;
+        width: 100px;
+      }
+
+      dd {
+        margin-left: 100px;
+        padding: 5px 0;
+        font-size: 14px;
+      }
+    }
+  }
+}

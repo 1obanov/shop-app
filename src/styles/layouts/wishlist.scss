@@ -1,0 +1,22 @@
+.wishlist {
+  &-empty {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    &__ico {
+      display: flex;
+      margin: 0 0 20px;
+    }
+
+    &__title {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    &__text {
+      margin: 0 0 30px;
+    }
+  }
+}

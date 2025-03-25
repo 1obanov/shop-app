@@ -1,0 +1,29 @@
+.headline {
+  padding: 64px 0;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    padding: 50px 0;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-size: 40px;
+
+    @media (max-width: 767px) {
+      font-size: 32px;
+    }
+
+    &:only-child {
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+  }
+
+  &--align-left {
+    text-align: left;
+  }
+}

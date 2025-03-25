@@ -1,0 +1,138 @@
+.cart-card {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: flex-start;
+  gap: 20px;
+
+  @media (max-width: 575px) {
+    grid-template-columns: 75px 1fr;
+  }
+
+  &__img {
+    width: 100%;
+    @include image-container;
+
+    .no-image {
+      @include no-image;
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 50px;
+
+    @media (max-width: 575px) {
+      gap: 20px;
+    }
+
+    .details {
+      .title {
+        display: inline-block;
+        color: var(--black);
+        font-weight: 500;
+        text-decoration: none;
+        margin-bottom: 5px;
+
+        @media (max-width: 575px) {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .price {
+        display: flex;
+        align-items: flex-end;
+        gap: 5px;
+        margin-bottom: 15px;
+
+        &__full {
+          text-align: center;
+          font-weight: 700;
+          font-size: 16px;
+
+          &--crossed {
+            text-decoration: line-through;
+            font-weight: 400;
+            color: var(--gray-600);
+            font-size: 14px;
+          }
+        }
+
+        &__discounted {
+          text-align: center;
+          font-weight: 700;
+          font-size: 16px;
+        }
+      }
+
+      .info {
+        margin-bottom: 15px;
+
+        dl {
+          margin: 0;
+          color: var(--gray-600);
+
+          dt {
+            float: left;
+            clear: left;
+            font-size: 14px;
+            padding: 2px 0;
+            margin-right: 5px;
+          }
+
+          dd {
+            padding: 2px 0;
+            font-size: 14px;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+
+    .remove {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      display: flex;
+      flex-shrink: 0;
+      transition: opacity 0.3s;
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--gray-400);
+        border-radius: 4px;
+        transition: border-color 0.3s;
+
+        @media (hover: hover) {
+          &:hover {
+            border-color: var(--gray-500);
+          }
+        }
+      }
+    }
+  }
+}
