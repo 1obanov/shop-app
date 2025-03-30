@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/shop-app/static/css/main.7b4e5bce.css",
-    "main.js": "/shop-app/static/js/main.c935ddfd.js",
+    "main.js": "/shop-app/static/js/main.6f49a525.js",
     "index.html": "/shop-app/index.html"
   },
   "entrypoints": [
     "static/css/main.7b4e5bce.css",
-    "static/js/main.c935ddfd.js"
+    "static/js/main.6f49a525.js"
   ]
 }
