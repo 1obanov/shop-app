@@ -57,8 +57,6 @@ export const ContextProvider = ({ children }) => {
     // Subscribing to the user's authentication state
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        console.log("USER");
-
         // Set the user as authenticated in state
         dispatch({ type: "SET_AUTHENTICATED", payload: true });
 
@@ -102,7 +100,6 @@ export const ContextProvider = ({ children }) => {
           unsubscribeToCart();
         };
       } else {
-        console.log("not a USER");
         // If the user is not authenticated, set loading states and clear data
         dispatch({ type: "SET_AUTHENTICATED", payload: false });
         dispatch({ type: "SET_LOADING_WISHLIST", payload: false });
