@@ -14,15 +14,15 @@ Explore the live demo of the **Shop App** [here](https://1obanov.github.io/shop-
 - Order Creation: Users can place orders based on their cart contents.
 - Wishlist Management: Logged-in users can add or remove products from their wishlist.
 - Persistent Cart & Wishlist:
-    For non-authenticated users, the cart is stored in localStorage.
-    For authenticated users, both the cart and wishlist are stored in Firebase.
+    * For non-authenticated users, the cart is stored in localStorage.
+    * For authenticated users, both the cart and wishlist are stored in Firebase.
 - User Authentication:
-    Users can create an account and log in.
-    Password recovery option is available.
+    * Users can create an account and log in.
+    * Password recovery option is available.
 - User Profile Management:
-    Authenticated users can update their full name, password, and date of birth.
-    Users can also add and manage addresses.
-    Users can view their order history.
+    * Authenticated users can update their full name, password, and date of birth.
+    * Users can also add and manage addresses.
+    * Users can view their order history.
 
 ### Technologies
 
