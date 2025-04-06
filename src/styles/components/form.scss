@@ -78,7 +78,7 @@
       input:not(.date-picker-input):-webkit-autofill {
         padding: 24px 12px 12px;
         background-clip: text;
-        -webkit-box-shadow: 0 0 0px 1000px var(--white) inset; /* Избегаем изменения цвета autofill */
+        -webkit-box-shadow: 0 0 0px 1000px var(--white) inset;
       }
 
       .password-toggle {
