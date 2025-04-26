@@ -7,7 +7,7 @@
   left: 0;
   right: 0;
   transition: box-shadow 0.3s;
-  z-index: 1;
+  z-index: 2;
 
   &.scrolled {
     box-shadow: 0 8px 16px rgba(126, 126, 126, 0.15);

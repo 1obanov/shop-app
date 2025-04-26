@@ -155,19 +155,20 @@
     }
 
     tfoot {
-      border-top: 1px solid var(--gray-250);
+      position: relative;
 
       &::before {
+        position: absolute;
         content: "";
-        display: block;
-        height: 10px;
+        width: 100%;
+        border-top: 1px solid var(--gray-250);
       }
 
       th,
       td {
         font-size: 18px;
         font-weight: 700;
-        padding: 10px 0;
+        padding: 15px 0 5px;
       }
     }
 

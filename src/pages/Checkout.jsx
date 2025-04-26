@@ -130,6 +130,10 @@ function Checkout() {
     };
   }, [dispatch]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentStep]);
+
   const handleNextStep = () => {
     dispatch({ type: "SET_CURRENT_STEP", payload: currentStep + 1 });
   };

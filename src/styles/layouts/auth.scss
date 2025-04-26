@@ -1,4 +1,6 @@
 .auth {
+  position: relative;
+
   &::after {
     @media (max-width: 1023px) {
       content: "";

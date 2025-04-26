@@ -23,36 +23,40 @@ import { UserOrders } from "./components/user/UserOrders";
 import { UserOrderDetails } from "./components/user/UserOrderDetails";
 import { UserAddresses } from "./components/user/UserAddresses";
 
+import { ScrollToTop } from "./components/shared/ScrollToTop";
+
 function App() {
   return (
     <ContextProvider>
       <Router>
-        <div className="wrapper">
-          <Header />
-          <main>
-            <Routes>
-              <Route path="/" element={<Shop />} />
-              <Route path="/product/:id" element={<ProductDetails />} />
-              <Route path="/wishlist" element={<WishList />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/order-success" element={<OrderSuccess />} />
-              <Route path="/account" element={<UserAccount />}>
-                <Route path="details" element={<UserDetails />} />
-                <Route path="orders" element={<UserOrders />} />
-                <Route path="orders/:id" element={<UserOrderDetails />} />
-                <Route path="addresses" element={<UserAddresses />} />
-              </Route>
-              <Route path="/auth" element={<Auth />} />
-              <Route path="/reset-password" element={<ResetPassword />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <MiniCart />
-            <WishListPopup />
-          </main>
-          <Footer />
-        </div>
-        <ToastContainer />
+        <ScrollToTop>
+          <div className="wrapper">
+            <Header />
+            <main>
+              <Routes>
+                <Route path="/" element={<Shop />} />
+                <Route path="/product/:id" element={<ProductDetails />} />
+                <Route path="/wishlist" element={<WishList />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/order-success" element={<OrderSuccess />} />
+                <Route path="/account" element={<UserAccount />}>
+                  <Route path="details" element={<UserDetails />} />
+                  <Route path="orders" element={<UserOrders />} />
+                  <Route path="orders/:id" element={<UserOrderDetails />} />
+                  <Route path="addresses" element={<UserAddresses />} />
+                </Route>
+                <Route path="/auth" element={<Auth />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <MiniCart />
+              <WishListPopup />
+            </main>
+            <Footer />
+          </div>
+          <ToastContainer />
+        </ScrollToTop>
       </Router>
     </ContextProvider>
   );
